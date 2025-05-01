@@ -1491,6 +1491,31 @@ putih_cup_4 = canvas.create_image(
     tags=("colored_cup", "putih", "4")
 )
 
+image_win = PhotoImage(file=relative_to_assets("button_3.png"))
+you_win_image_id = canvas.create_image(
+    720.0, 512.0,
+    image=image_win,
+    state="hidden",
+    tags=("you_win_image",)
+)
+
+image_draw = PhotoImage(file=relative_to_assets("button_2.png"))
+you_draw_image_id = canvas.create_image(
+    720.0, 512.0,
+    image=image_draw,
+    state="hidden",
+    tags=("you_draw_image",)
+)
+
+image_lose = PhotoImage(file=relative_to_assets("button_1.png"))
+you_lose_image_id = canvas.create_image(
+    720.0, 512.0,
+    image=image_lose,
+    state="hidden",
+    tags=("you_lose_image",)
+)
+
+
 ################################################### FUNCTIONS ######################################
 #################
 ### VARIABLES ###
@@ -1558,6 +1583,7 @@ def hide_all_except_start():
     canvas.itemconfig(lose_button_id, state="hidden")
     canvas.itemconfig(his_entry_score_id, state="hidden")
     canvas.itemconfig(her_entry_score_id, state="hidden")
+    canvas.itemconfig("you_win_image", state="hidden")
     for i in range(1, 10):
         canvas.itemconfig(globals()[f"gp{i}"], state="hidden")
     for i in range(1, 10):
@@ -1597,6 +1623,7 @@ total_score_user = 0
 comparison_results_user = []
 total_score_kom = 0
 comparison_results_kom = []
+user_turn_count = 0
 
 # Store buttons and their canvas IDs when creating them
 for i in range(1, 10):
@@ -1851,7 +1878,7 @@ turn = "user"
 
 def handle_button_click(button, status_="user"):
     """Handles button clicks and compares two buttons"""
-    global first_click, second_click, result, total_score, turn
+    global first_click, second_click, result, total_score, turn, user_turn_count
 
     # if status_ != "cup":
     #     if turn != "user":
@@ -1898,6 +1925,11 @@ def handle_button_click(button, status_="user"):
         else:
             update_my_score_display_kom()
             turn = "user"
+
+            user_turn_count += 1
+            if user_turn_count >= 5:
+                print("Giliran user selesai!")
+                check_winner()
 
         update_image_based_on_selection()
     
@@ -2095,6 +2127,15 @@ def compare_buttons():
 
     print(f"Result dari compare_buttons: {result}")
     return result, latest_result
+
+def check_winner():
+    if total_score_user > total_score_kom:
+        canvas.itemconfig("you_win_image", state="normal")
+    elif total_score_user < total_score_kom:
+        canvas.itemconfig("you_lose_image", state="normal")
+    else:
+        canvas.itemconfig("you_draw_image", state="normal")
+
 
 
 def update_image_based_on_selection():
