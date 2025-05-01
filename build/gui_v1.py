@@ -6,7 +6,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, TclError
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame0")
@@ -19,7 +19,7 @@ def relative_to_assets(path: str) -> Path:
 root = Tk()
 
 root.title("Kitty Cup")
-# root.iconbitmap(r"D:\ML Projects\Mini Game\GUI\gui\assets\hb.ico")
+root.iconbitmap(r"./assets/hb.ico")
 root.geometry("1440x1024")
 root.configure(bg="#F2EFED")
 
@@ -126,20 +126,7 @@ tile9 = canvas.create_image(
     tags=("default_main_area")
 )
 
-
 ############################# SCORE AREA #################################
-def update_my_score_display():
-    her_entry_score.config(state="normal")  # Ubah jadi normal dulu
-    her_entry_score.delete(0, "end")  # Kosongkan
-    her_entry_score.insert(0, str(total_score))  # Masukkan nilai terbaru
-    her_entry_score.config(state="readonly")  # Lock lagi supaya tidak bisa diedit
-
-def update_my_score_display_kom():
-    his_entry_score.config(state="normal")  # Ubah jadi normal dulu
-    his_entry_score.delete(0, "end")  # Kosongkan
-    his_entry_score.insert(0, str(total_score))  # Masukkan nilai terbaru
-    his_entry_score.config(state="readonly")  # Lock lagi supaya tidak bisa diedit
-
 image_image_11 = PhotoImage(
     file=relative_to_assets("image_11.png"))
 my_score = canvas.create_image(
@@ -207,8 +194,7 @@ her_entry_score_id = canvas.create_window(
 )
 
 canvas.itemconfig(her_entry_score_id, width=50, height=30)
-total_score = 0
-her_entry_score.insert(0, (total_score))
+# her_entry_score.insert(0, "10")
 
 her_entry_score.config(state="readonly")
 
@@ -684,20 +670,6 @@ for psi in range(1, posisi_+1):
             # Simpan ke dictionary
             buttons_komputer[button_id] = btn
 
-
-# km33 = Button(
-#     image=button_image_kom,
-#     borderwidth=0,
-#     highlightthickness=0,
-#     relief="flat",
-#     command=lambda: handle_button_click(km33)
-# )
-# # Store all data as attributes
-# km33.id = button_data["id"]
-# km33.warna = button_data["warna"]
-# km33.angka = button_data["angka"]
-
-
 ############################# TITLE #################################
 image_image_19 = PhotoImage(
     file=relative_to_assets("image_19.png"))
@@ -750,550 +722,550 @@ canvas.itemconfig(default_area, state='hidden')
 
 button_image_7 = PhotoImage(
     file=relative_to_assets("button_7.png"))
-cup_1 = Button(
+putih_glass_1 = Button(
     image=button_image_7,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(cup_1, "cup")
+    command=lambda: handle_button_click(putih_glass_1, "cup")
 )
-cup_1.place(
+putih_glass_1.place(
     width=157.0,
     height=155.0
 )
-gp1 = canvas.create_window(387.0, 330.0, window=cup_1)
+gp1 = canvas.create_window(387.0, 330.0, window=putih_glass_1)
 button_data = {"id": "p1", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_1.id = button_data["id"]
-cup_1.status = button_data["status"]
-cup_1.warna = button_data["warna"]
+putih_glass_1.id = button_data["id"]
+putih_glass_1.status = button_data["status"]
+putih_glass_1.warna = button_data["warna"]
 
 button_image_8 = PhotoImage(
     file=relative_to_assets("button_8.png"))
-cup_2 = Button(
+putih_glass_2 = Button(
     image=button_image_8,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_2, "cup"),
+    command=lambda: handle_button_click(putih_glass_2, "cup"),
     relief="flat"
 )
-cup_2.place(
+putih_glass_2.place(
     width=157.0,
     height=155.0
 )
-gp2 = canvas.create_window(563.0, 330.0, window=cup_2)
+gp2 = canvas.create_window(563.0, 330.0, window=putih_glass_2)
 button_data = {"id": "p2", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_2.id = button_data["id"]
-cup_2.status = button_data["status"]
-cup_2.warna = button_data["warna"]
+putih_glass_2.id = button_data["id"]
+putih_glass_2.status = button_data["status"]
+putih_glass_2.warna = button_data["warna"]
 
 button_image_9 = PhotoImage(
     file=relative_to_assets("button_9.png"))
-cup_3 = Button(
+putih_glass_3 = Button(
     image=button_image_9,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_3, "cup"),
+    command=lambda: handle_button_click(putih_glass_3, "cup"),
     relief="flat"
 )
-cup_3.place(
+putih_glass_3.place(
     width=157.0,
     height=155.0
 )
-gp3 = canvas.create_window(738.0, 330.0, window=cup_3)
+gp3 = canvas.create_window(738.0, 330.0, window=putih_glass_3)
 button_data = {"id": "p3", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_3.id = button_data["id"]
-cup_3.status = button_data["status"]
-cup_3.warna = button_data["warna"]
+putih_glass_3.id = button_data["id"]
+putih_glass_3.status = button_data["status"]
+putih_glass_3.warna = button_data["warna"]
 
 button_image_10 = PhotoImage(
     file=relative_to_assets("button_10.png"))
-cup_4 = Button(
+putih_glass_4 = Button(
     image=button_image_10,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_4, "cup"),
+    command=lambda: handle_button_click(putih_glass_4, "cup"),
     relief="flat"
 )
-cup_4.place(
+putih_glass_4.place(
     width=157.0,
     height=155.0
 )
-gp4 = canvas.create_window(387.0, 507.0, window=cup_4)
+gp4 = canvas.create_window(387.0, 507.0, window=putih_glass_4)
 button_data = {"id": "p4", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_4.id = button_data["id"]
-cup_4.status = button_data["status"]
-cup_4.warna = button_data["warna"]
+putih_glass_4.id = button_data["id"]
+putih_glass_4.status = button_data["status"]
+putih_glass_4.warna = button_data["warna"]
 
 button_image_11 = PhotoImage(
     file=relative_to_assets("button_11.png"))
-cup_5 = Button(
+putih_glass_5 = Button(
     image=button_image_11,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_5, "cup"),
+    command=lambda: handle_button_click(putih_glass_5, "cup"),
     relief="flat"
 )
-cup_5.place(
+putih_glass_5.place(
     width=157.0,
     height=155.0
 )
-gp5 = canvas.create_window(563.0, 507.0, window=cup_5)
+gp5 = canvas.create_window(563.0, 507.0, window=putih_glass_5)
 button_data = {"id": "p5", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_5.id = button_data["id"]
-cup_5.status = button_data["status"]
-cup_5.warna = button_data["warna"]
+putih_glass_5.id = button_data["id"]
+putih_glass_5.status = button_data["status"]
+putih_glass_5.warna = button_data["warna"]
 
 button_image_12 = PhotoImage(
     file=relative_to_assets("button_12.png"))
-cup_6 = Button(
+putih_glass_6 = Button(
     image=button_image_12,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_6, "cup"),
+    command=lambda: handle_button_click(putih_glass_6, "cup"),
     relief="flat"
 )
-cup_6.place(
+putih_glass_6.place(
     width=157.0,
     height=155.0
 )
-gp6 = canvas.create_window(738.0, 507.0, window=cup_6)
+gp6 = canvas.create_window(738.0, 507.0, window=putih_glass_6)
 button_data = {"id": "p6", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_6.id = button_data["id"]
-cup_6.status = button_data["status"]
-cup_6.warna = button_data["warna"]
+putih_glass_6.id = button_data["id"]
+putih_glass_6.status = button_data["status"]
+putih_glass_6.warna = button_data["warna"]
 
 button_image_13 = PhotoImage(
     file=relative_to_assets("button_13.png"))
-cup_7 = Button(
+putih_glass_7 = Button(
     image=button_image_13,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_7, "cup"),
+    command=lambda: handle_button_click(putih_glass_7, "cup"),
     relief="flat"
 )
-cup_7.place(
+putih_glass_7.place(
     width=157.0,
     height=155.0
 )
-gp7 = canvas.create_window(387.0, 684.0, window=cup_7)
+gp7 = canvas.create_window(387.0, 684.0, window=putih_glass_7)
 button_data = {"id": "p7", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_7.id = button_data["id"]
-cup_7.status = button_data["status"]
-cup_7.warna = button_data["warna"]
+putih_glass_7.id = button_data["id"]
+putih_glass_7.status = button_data["status"]
+putih_glass_7.warna = button_data["warna"]
 
 button_image_14 = PhotoImage(
     file=relative_to_assets("button_14.png"))
-cup_8 = Button(
+putih_glass_8 = Button(
     image=button_image_14,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_8, "cup"),
+    command=lambda: handle_button_click(putih_glass_8, "cup"),
     relief="flat"
 )
-cup_8.place(
+putih_glass_8.place(
     width=157.0,
     height=155.0
 )
-gp8 = canvas.create_window(563.0, 684.0, window=cup_8)
+gp8 = canvas.create_window(563.0, 684.0, window=putih_glass_8)
 button_data = {"id": "p8", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_8.id = button_data["id"]
-cup_8.status = button_data["status"]
-cup_8.warna = button_data["warna"]
+putih_glass_8.id = button_data["id"]
+putih_glass_8.status = button_data["status"]
+putih_glass_8.warna = button_data["warna"]
 
 button_image_6 = PhotoImage(
     file=relative_to_assets("button_6.png"))
-cup_9 = Button(
+putih_glass_9 = Button(
     image=button_image_6,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: handle_button_click(cup_9, "cup"),
+    command=lambda: handle_button_click(putih_glass_9, "cup"),
     relief="flat"
 )
-cup_9.place(
+putih_glass_9.place(
     width=157.0,
     height=155.0
 )
-gp9 = canvas.create_window(738.0, 684.0, window=cup_9)
+gp9 = canvas.create_window(738.0, 684.0, window=putih_glass_9)
 button_data = {"id": "p9", "status": "kosong", "warna": "putih"}
 # Store all data as attributes
-cup_9.id = button_data["id"]
-cup_9.status = button_data["status"]
-cup_9.warna = button_data["warna"]
+putih_glass_9.id = button_data["id"]
+putih_glass_9.status = button_data["status"]
+putih_glass_9.warna = button_data["warna"]
 
 ####################### DEFAULT COLORED CUP BUTTON #############################
 button_image_33 = PhotoImage(
     file=relative_to_assets("button_33.png"))
-blue_glass_1 = Button(
+biru_glass_1 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_1)
+    command=lambda: handle_button_click(biru_glass_1, "cup")
 )
-blue_glass_1.place(
+biru_glass_1.place(
     width=157.0,
     height=155.0
 )
-gb1 = canvas.create_window(387.0, 330.0, window=blue_glass_1)
+gb1 = canvas.create_window(387.0, 330.0, window=biru_glass_1)
 button_data = {"id": "p1", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_1.id = button_data["id"]
-blue_glass_1.status = button_data["status"]
-blue_glass_1.warna = button_data["warna"]
+biru_glass_1.id = button_data["id"]
+biru_glass_1.status = button_data["status"]
+biru_glass_1.warna = button_data["warna"]
 
-blue_glass_2 = Button(
+biru_glass_2 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_2)
+    command=lambda: handle_button_click(biru_glass_2, "cup")
 )
-blue_glass_2.place(
+biru_glass_2.place(
     width=157.0,
     height=155.0
 )
-gb2 = canvas.create_window(563.0, 330.0, window=blue_glass_2)
+gb2 = canvas.create_window(563.0, 330.0, window=biru_glass_2)
 button_data = {"id": "p2", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_2.id = button_data["id"]
-blue_glass_2.status = button_data["status"]
-blue_glass_2.warna = button_data["warna"]
+biru_glass_2.id = button_data["id"]
+biru_glass_2.status = button_data["status"]
+biru_glass_2.warna = button_data["warna"]
 
-blue_glass_3 = Button(
+biru_glass_3 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_3)
+    command=lambda: handle_button_click(biru_glass_3, "cup")
 )
-blue_glass_3.place(
+biru_glass_3.place(
     width=157.0,
     height=155.0
 )
-gb3 = canvas.create_window(738.0, 330.0, window=blue_glass_3)
+gb3 = canvas.create_window(738.0, 330.0, window=biru_glass_3)
 button_data = {"id": "p3", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_3.id = button_data["id"]
-blue_glass_3.status = button_data["status"]
-blue_glass_3.warna = button_data["warna"]
+biru_glass_3.id = button_data["id"]
+biru_glass_3.status = button_data["status"]
+biru_glass_3.warna = button_data["warna"]
 
-blue_glass_4 = Button(
+biru_glass_4 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_4)
+    command=lambda: handle_button_click(biru_glass_4, "cup")
 )
-blue_glass_4.place(
+biru_glass_4.place(
     width=157.0,
     height=155.0
 )
-gb4 = canvas.create_window(387.0, 507.0, window=blue_glass_4)
+gb4 = canvas.create_window(387.0, 507.0, window=biru_glass_4)
 button_data = {"id": "p4", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_4.id = button_data["id"]
-blue_glass_4.status = button_data["status"]
-blue_glass_4.warna = button_data["warna"]
+biru_glass_4.id = button_data["id"]
+biru_glass_4.status = button_data["status"]
+biru_glass_4.warna = button_data["warna"]
 
-blue_glass_5 = Button(
+biru_glass_5 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_5)
+    command=lambda: handle_button_click(biru_glass_5, "cup")
 )
-blue_glass_5.place(
+biru_glass_5.place(
     width=157.0,
     height=155.0
 )
-gb5 = canvas.create_window(563.0, 507.0, window=blue_glass_5)
+gb5 = canvas.create_window(563.0, 507.0, window=biru_glass_5)
 button_data = {"id": "p5", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_5.id = button_data["id"]
-blue_glass_5.status = button_data["status"]
-blue_glass_5.warna = button_data["warna"]
+biru_glass_5.id = button_data["id"]
+biru_glass_5.status = button_data["status"]
+biru_glass_5.warna = button_data["warna"]
 
-blue_glass_6 = Button(
+biru_glass_6 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_6)
+    command=lambda: handle_button_click(biru_glass_6, "cup")
 )
-blue_glass_6.place(
+biru_glass_6.place(
     width=157.0,
     height=155.0
 )
-gb6 = canvas.create_window(738.0, 507.0, window=blue_glass_6)
+gb6 = canvas.create_window(738.0, 507.0, window=biru_glass_6)
 button_data = {"id": "p6", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_6.id = button_data["id"]
-blue_glass_6.status = button_data["status"]
-blue_glass_6.warna = button_data["warna"]
+biru_glass_6.id = button_data["id"]
+biru_glass_6.status = button_data["status"]
+biru_glass_6.warna = button_data["warna"]
 
-blue_glass_7 = Button(
+biru_glass_7 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_7)
+    command=lambda: handle_button_click(biru_glass_7, "cup")
 )
-blue_glass_7.place(
+biru_glass_7.place(
     width=157.0,
     height=155.0
 )
-gb7 = canvas.create_window(387.0, 684.0, window=blue_glass_7)
+gb7 = canvas.create_window(387.0, 684.0, window=biru_glass_7)
 button_data = {"id": "p7", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_7.id = button_data["id"]
-blue_glass_7.status = button_data["status"]
-blue_glass_7.warna = button_data["warna"]
+biru_glass_7.id = button_data["id"]
+biru_glass_7.status = button_data["status"]
+biru_glass_7.warna = button_data["warna"]
 
-blue_glass_8 = Button(
+biru_glass_8 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_8)
+    command=lambda: handle_button_click(biru_glass_8, "cup")
 )
-blue_glass_8.place(
+biru_glass_8.place(
     width=157.0,
     height=155.0
 )
-gb8 = canvas.create_window(563.0, 684.0, window=blue_glass_8)
+gb8 = canvas.create_window(563.0, 684.0, window=biru_glass_8)
 button_data = {"id": "p8", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_8.id = button_data["id"]
-blue_glass_8.status = button_data["status"]
-blue_glass_8.warna = button_data["warna"]
+biru_glass_8.id = button_data["id"]
+biru_glass_8.status = button_data["status"]
+biru_glass_8.warna = button_data["warna"]
 
-blue_glass_9 = Button(
+biru_glass_9 = Button(
     image=button_image_33,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(blue_glass_9)
+    command=lambda: handle_button_click(biru_glass_9, "cup")
 )
-blue_glass_9.place(
+biru_glass_9.place(
     width=157.0,
     height=155.0
 )
-gb9 = canvas.create_window(738.0, 684.0, window=blue_glass_9)
+gb9 = canvas.create_window(738.0, 684.0, window=biru_glass_9)
 button_data = {"id": "p9", "status": "kosong", "warna": "biru"}
 # Store all data as attributes
-blue_glass_9.id = button_data["id"]
-blue_glass_9.status = button_data["status"]
-blue_glass_9.warna = button_data["warna"]
+biru_glass_9.id = button_data["id"]
+biru_glass_9.status = button_data["status"]
+biru_glass_9.warna = button_data["warna"]
 
 button_image_34 = PhotoImage(
     file=relative_to_assets("button_34.png"))
-red_glass_1 = Button(
+merah_glass_1 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_1)
+    command=lambda: handle_button_click(merah_glass_1, "cup")
 )
-red_glass_1.place(
+merah_glass_1.place(
     width=157.0,
     height=155.0
 )
-gm1 = canvas.create_window(387.0, 330.0, window=red_glass_1)
+gm1 = canvas.create_window(387.0, 330.0, window=merah_glass_1)
 # GM1
 button_data = {"id": "p1", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_1.id = button_data["id"]
-red_glass_1.status = button_data["status"]
-red_glass_1.warna = button_data["warna"]
+merah_glass_1.id = button_data["id"]
+merah_glass_1.status = button_data["status"]
+merah_glass_1.warna = button_data["warna"]
 
-red_glass_2 = Button(
+merah_glass_2 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_2)
+    command=lambda: handle_button_click(merah_glass_2, "cup")
 )
-red_glass_2.place(
+merah_glass_2.place(
     width=157.0,
     height=155.0
 )
-gm2 = canvas.create_window(563.0, 330.0, window=red_glass_2)
+gm2 = canvas.create_window(563.0, 330.0, window=merah_glass_2)
 # GM2
 button_data = {"id": "p2", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_2.id = button_data["id"]
-red_glass_2.status = button_data["status"]
-red_glass_2.warna = button_data["warna"]
+merah_glass_2.id = button_data["id"]
+merah_glass_2.status = button_data["status"]
+merah_glass_2.warna = button_data["warna"]
 
-red_glass_3 = Button(
+merah_glass_3 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_3)
+    command=lambda: handle_button_click(merah_glass_3, "cup")
 )
-red_glass_3.place(
+merah_glass_3.place(
     width=157.0,
     height=155.0
 )
-gm3 = canvas.create_window(738.0, 330.0, window=red_glass_3)
+gm3 = canvas.create_window(738.0, 330.0, window=merah_glass_3)
 # GM3
 button_data = {"id": "p3", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_3.id = button_data["id"]
-red_glass_3.status = button_data["status"]
-red_glass_3.warna = button_data["warna"]
+merah_glass_3.id = button_data["id"]
+merah_glass_3.status = button_data["status"]
+merah_glass_3.warna = button_data["warna"]
 
-red_glass_4 = Button(
+merah_glass_4 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_4)
+    command=lambda: handle_button_click(merah_glass_4, "cup")
 )
-red_glass_4.place(
+merah_glass_4.place(
     width=157.0,
     height=155.0
 )
-gm4 = canvas.create_window(387.0, 507.0, window=red_glass_4)
+gm4 = canvas.create_window(387.0, 507.0, window=merah_glass_4)
 # GM4
 button_data = {"id": "p4", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_4.id = button_data["id"]
-red_glass_4.status = button_data["status"]
-red_glass_4.warna = button_data["warna"]
+merah_glass_4.id = button_data["id"]
+merah_glass_4.status = button_data["status"]
+merah_glass_4.warna = button_data["warna"]
 
-red_glass_5 = Button(
+merah_glass_5 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_5)
+    command=lambda: handle_button_click(merah_glass_5, "cup")
 )
-red_glass_5.place(
+merah_glass_5.place(
     width=157.0,
     height=155.0
 )
-gm5 = canvas.create_window(563.0, 507.0, window=red_glass_5)
+gm5 = canvas.create_window(563.0, 507.0, window=merah_glass_5)
 # GM5
 button_data = {"id": "p5", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_5.id = button_data["id"]
-red_glass_5.status = button_data["status"]
-red_glass_5.warna = button_data["warna"]
+merah_glass_5.id = button_data["id"]
+merah_glass_5.status = button_data["status"]
+merah_glass_5.warna = button_data["warna"]
 
-red_glass_6 = Button(
+merah_glass_6 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_6)
+    command=lambda: handle_button_click(merah_glass_6, "cup")
 )
-red_glass_6.place(
+merah_glass_6.place(
     width=157.0,
     height=155.0
 )
-gm6 = canvas.create_window(738.0, 507.0, window=red_glass_6)
+gm6 = canvas.create_window(738.0, 507.0, window=merah_glass_6)
 # GM6
 button_data = {"id": "p6", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_6.id = button_data["id"]
-red_glass_6.status = button_data["status"]
-red_glass_6.warna = button_data["warna"]
+merah_glass_6.id = button_data["id"]
+merah_glass_6.status = button_data["status"]
+merah_glass_6.warna = button_data["warna"]
 
-red_glass_7 = Button(
+merah_glass_7 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_7)
+    command=lambda: handle_button_click(merah_glass_7, "cup")
 )
-red_glass_7.place(
+merah_glass_7.place(
     width=157.0,
     height=155.0
 )
-gm7 = canvas.create_window(387.0, 684.0, window=red_glass_7)
+gm7 = canvas.create_window(387.0, 684.0, window=merah_glass_7)
 # GM7
 button_data = {"id": "p7", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_7.id = button_data["id"]
-red_glass_7.status = button_data["status"]
-red_glass_7.warna = button_data["warna"]
+merah_glass_7.id = button_data["id"]
+merah_glass_7.status = button_data["status"]
+merah_glass_7.warna = button_data["warna"]
 
-red_glass_8 = Button(
+merah_glass_8 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_8)
+    command=lambda: handle_button_click(merah_glass_8, "cup")
 )
-red_glass_8.place(
+merah_glass_8.place(
     width=157.0,
     height=155.0
 )
-gm8 = canvas.create_window(563.0, 684.0, window=red_glass_8)
+gm8 = canvas.create_window(563.0, 684.0, window=merah_glass_8)
 # GM8
 button_data = {"id": "p8", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_8.id = button_data["id"]
-red_glass_8.status = button_data["status"]
-red_glass_8.warna = button_data["warna"]
+merah_glass_8.id = button_data["id"]
+merah_glass_8.status = button_data["status"]
+merah_glass_8.warna = button_data["warna"]
 
-red_glass_9 = Button(
+merah_glass_9 = Button(
     image=button_image_34,
     borderwidth=0,
     highlightthickness=0,
     relief="flat",
-    command=lambda: handle_button_click(red_glass_9)
+    command=lambda: handle_button_click(merah_glass_9, "cup")
 )
-red_glass_9.place(
+merah_glass_9.place(
     width=157.0,
     height=155.0
 )
-gm9 = canvas.create_window(738.0, 684.0, window=red_glass_9)
+gm9 = canvas.create_window(738.0, 684.0, window=merah_glass_9)
 # GM9
 button_data = {"id": "p9", "status": "kosong", "warna": "merah"}
 # Store all data as attributes
-red_glass_9.id = button_data["id"]
-red_glass_9.status = button_data["status"]
-red_glass_9.warna = button_data["warna"]
+merah_glass_9.id = button_data["id"]
+merah_glass_9.status = button_data["status"]
+merah_glass_9.warna = button_data["warna"]
 
 ############################# CAT HEADS #################################
 
-image_image_32 = PhotoImage(
-    file=relative_to_assets("image_32.png"))
-white_head = canvas.create_image(
-    102.0,
-    100.0,
-    image=image_image_32,
-    tags=("cat_head", "white_head")
-)
+# image_image_32 = PhotoImage(
+#     file=relative_to_assets("image_32.png"))
+# white_head = canvas.create_image(
+#     387.0,
+#     330.0,
+#     image=image_image_32,
+#     tags=("cat_head","white_head")
+# )
 
-image_image_33 = PhotoImage(
-    file=relative_to_assets("image_33.png"))
-blue_head = canvas.create_image(
-    344.0,
-    100.0,
-    image=image_image_33,
-    tags=("cat_head", "blue_head")
-)
+# image_image_33 = PhotoImage(
+#     file=relative_to_assets("image_33.png"))
+# blue_head = canvas.create_image(
+#     344.0,
+#     100.0,
+#     image=image_image_33,
+#     tags=("cat_head","blue_head")
+# )
 
-image_image_34 = PhotoImage(
-    file=relative_to_assets("image_34.png"))
-red_head = canvas.create_image(
-    223.0,
-    100.0,
-    image=image_image_34,
-    tags=("cat_head", "red_head")
-)
+# image_image_34 = PhotoImage(
+#     file=relative_to_assets("image_34.png"))
+# red_head = canvas.create_image(
+#     223.0,
+#     100.0,
+#     image=image_image_34,
+#     tags=("cat_head","red_head")
+# )
 
 ############################################## BUTTONS #############################################
 
@@ -1367,6 +1339,158 @@ start_button.place(
 # 324.0,
 start_button_id = canvas.create_window(736, 574, window=start_button)
 
+####################################### COLORED NUMBER CUPS #########################################
+image_references = {}
+image_image_52 = PhotoImage(
+    file=relative_to_assets("image_52.png"))
+image_references["biru_cup_6"] = image_image_52
+biru_cup_6 = canvas.create_image(
+    1271.420654296875,
+    401.0,
+    image=image_image_52,
+    tags=("colored_cup", "biru", "6")
+)
+
+image_image_53 = PhotoImage(
+    file=relative_to_assets("image_53.png"))
+image_references["biru_cup_1"] = image_image_53
+biru_cup_1 = canvas.create_image(
+    251.0,
+    401.0,
+    image=image_image_53,
+    tags=("colored_cup", "biru", "1")
+)
+
+image_image_54 = PhotoImage(
+    file=relative_to_assets("image_54.png"))
+image_references["biru_cup_2"] = image_image_54
+biru_cup_2 = canvas.create_image(
+    506.10498046875,
+    401.0,
+    image=image_image_54,
+    tags=("colored_cup", "biru", "2")
+)
+
+image_image_55 = PhotoImage(
+    file=relative_to_assets("image_55.png"))
+image_references["biru_cup_3"] = image_image_55
+biru_cup_3 = canvas.create_image(
+    761.210205078125,
+    401.0,
+    image=image_image_55,
+    tags=("colored_cup", "biru", "3")
+)
+
+image_image_56 = PhotoImage(
+    file=relative_to_assets("image_56.png"))
+image_references["biru_cup_4"] = image_image_56
+biru_cup_4 = canvas.create_image(
+    1016.3154296875,
+    401.0,
+    image=image_image_56,
+    tags=("colored_cup", "biru", "4")
+)
+
+image_image_57 = PhotoImage(
+    file=relative_to_assets("image_57.png"))
+image_references["merah_cup_2"] = image_image_57
+merah_cup_2 = canvas.create_image(
+    506.10498046875,
+    588.0,
+    image=image_image_57,
+    tags=("colored_cup", "merah", "2")
+)
+
+image_image_58 = PhotoImage(
+    file=relative_to_assets("image_58.png"))
+image_references["merah_cup_3"] = image_image_58
+merah_cup_3 = canvas.create_image(
+    761.210205078125,
+    588.0,
+    image=image_image_58,
+    tags=("colored_cup", "merah", "3")
+)
+
+image_image_59 = PhotoImage(
+    file=relative_to_assets("image_59.png"))
+image_references["merah_cup_4"] = image_image_59
+merah_cup_4 = canvas.create_image(
+    1021.39208984375,
+    588.0,
+    image=image_image_59,
+    tags=("colored_cup", "merah", "4")
+)
+
+image_image_60 = PhotoImage(
+    file=relative_to_assets("image_60.png"))
+image_references["merah_cup_6"] = image_image_60
+merah_cup_6 = canvas.create_image(
+    1271.420654296875,
+    588.0,
+    image=image_image_60,
+    tags=("colored_cup", "merah", "6")
+)
+
+image_image_61 = PhotoImage(
+    file=relative_to_assets("image_61.png"))
+image_references["merah_cup_1"] = image_image_61
+merah_cup_1 = canvas.create_image(
+    251.0,
+    588.0,
+    image=image_image_61,
+    tags=("colored_cup", "merah", "1")
+)
+
+image_image_62 = PhotoImage(
+    file=relative_to_assets("image_62.png"))
+image_references["putih_cup_6"] = image_image_62
+putih_cup_6 = canvas.create_image(
+    1271.420654296875,
+    775.0,
+    image=image_image_62,
+    tags=("colored_cup", "putih", "6")
+)
+
+image_image_63 = PhotoImage(
+    file=relative_to_assets("image_63.png"))
+image_references["putih_cup_1"] = image_image_63
+putih_cup_1 = canvas.create_image(
+    251.0,
+    775.0,
+    image=image_image_63,
+    tags=("colored_cup", "putih", "1")
+)
+
+image_image_64 = PhotoImage(
+    file=relative_to_assets("image_64.png"))
+image_references["putih_cup_2"] = image_image_64
+putih_cup_2 = canvas.create_image(
+    506.10498046875,
+    775.0,
+    image=image_image_64,
+    tags=("colored_cup", "putih", "2")
+)
+
+image_image_65 = PhotoImage(
+    file=relative_to_assets("image_65.png"))
+image_references["putih_cup_3"] = image_image_65
+putih_cup_3 = canvas.create_image(
+    763.74853515625,
+    775.0,
+    image=image_image_65,
+    tags=("colored_cup", "putih", "3")
+)
+
+image_image_66 = PhotoImage(
+    file=relative_to_assets("image_66.png"))
+image_references["putih_cup_4"] = image_image_66
+putih_cup_4 = canvas.create_image(
+    1021.39208984375,
+    775.0,
+    image=image_image_66,
+    tags=("colored_cup", "putih", "4")
+)
+
 ################################################### FUNCTIONS ######################################
 #################
 ### VARIABLES ###
@@ -1428,6 +1552,7 @@ def hide_all_except_start():
     canvas.itemconfig("tile", state='hidden')
     canvas.itemconfig("cat_head", state='hidden')
     canvas.itemconfig("title_game", state='hidden')
+    canvas.itemconfig("colored_cup", state='hidden')
     canvas.itemconfig(draw_button_id, state="hidden")
     canvas.itemconfig(win_button_id, state="hidden")
     canvas.itemconfig(lose_button_id, state="hidden")
@@ -1449,157 +1574,180 @@ def show_all_elements():
     canvas.itemconfig("back_card", state='normal')
     canvas.itemconfig("title_game", state='normal')
     canvas.itemconfig("title_start", state='hidden')
+    canvas.itemconfig("cat_head", state='normal')
     canvas.itemconfig(his_entry_score_id, state="normal")
     canvas.itemconfig(her_entry_score_id, state="normal")
     canvas.itemconfig(start_button_id, state="hidden")
-    for i in range(1, 10):
-        canvas.itemconfig(globals()[f"gp{i}"], state="normal")
+    # for i in range(1, 10):
+    #     canvas.itemconfig(globals()[f"gp{i}"], state="normal")
     select_and_show_random_buttons()
     place_random_buttons()
+
     # ... rest of the showing logic
-
-# def bagi_kartu(kartu):
-#     return random.sample(kartu, 3)
-
-card_in_play = []
-
-
-def remove_kartu(button):
-    global pos
-    """Menghapus kartu berdasarkan ID"""
-    global card_in_play
-    card_positions = [
-        (330.0, 762.0),  # Position 1
-        (500.0, 762.0),  # Position 2
-        (670.0, 762.0),  # Position 3
-        (330.0, 10.0),
-        (500.0, 10.0),
-        (670.0, 10.0)
-    ]
-    print("ini card in play ", card_in_play)
-    if button in card_in_play:
-        print(f"card {button.id} not in play!")
-        return
-
-    pos_index = None
-    for i, pos in enumerate(card_positions):
-        if (button.winfo_x(), button.winfo_y()) == pos:
-            pos_index = 1
-            print("yag tereksekusi yg didalm if")
-            break
-
-    button.place_forget()  # Hide the button
-    print(f"Kartu dengan ID {button.id} berhasil dihapus.")
-    ambil_kartu(pos)
-
-
-def ambil_kartu(pos):
-    """Menambahkan kartu baru ke layar setelah first click"""
-    global card_in_play
-    buttons_pos = []
-
-    card_positions = [
-        (330.0, 762.0),  # Position 1
-        (500.0, 762.0),  # Position 2
-        (670.0, 762.0),  # Position 3
-        (330.0, 10.0),
-        (500.0, 10.0),
-        (670.0, 10.0)
-    ]
-    print("nilai post:", pos)
-    # available_card = [card for card in all_buttons if card not in card_in_play]
-    # if available_card:
-    # (ingin cek pos yg kosong lalu ambil kartu dari indek pos kosong itu)
-    dict_pos = {"list_pos_1": [kp11, kp21, kp31, kb11, kb21, kb31, km11, km21, km31],
-                "list_pos_2": [kp12, kp22, kp32, kb12, kb22, kb32, km12, km22, km32],
-                "list_pos_3": [kp13, kp23, kp33, kb13, kb23, kb33, km13, km23, km33],
-                "list_pos_1c": [buttons_komputer["kpc11"], buttons_komputer["kpc21"], buttons_komputer["kpc31"],
-                               buttons_komputer["kmc11"], buttons_komputer["kmc21"], buttons_komputer["kmc31"],
-                               buttons_komputer["kbc11"], buttons_komputer["kbc21"], buttons_komputer["kbc31"]],
-                "list_pos_2c": [buttons_komputer["kpc12"], buttons_komputer["kpc22"], buttons_komputer["kpc32"],
-                               buttons_komputer["kmc12"], buttons_komputer["kmc22"], buttons_komputer["kmc32"],
-                               buttons_komputer["kbc12"], buttons_komputer["kbc22"], buttons_komputer["kbc32"]],
-                "list_pos_3c": [buttons_komputer["kpc13"], buttons_komputer["kpc23"], buttons_komputer["kpc33"],
-                               buttons_komputer["kmc13"], buttons_komputer["kmc23"], buttons_komputer["kmc33"],
-                               buttons_komputer["kbc13"], buttons_komputer["kbc23"], buttons_komputer["kbc33"]]
-                }
-
-    if pos == card_positions[0]:
-        button_post = dict_pos["list_pos_1"]
-        new_card = random.choice(button_post)
-    elif pos == card_positions[1]:
-        button_post = dict_pos["list_pos_2"]
-        new_card = random.choice(button_post)
-    elif pos == card_positions[2]:
-        button_post = dict_pos["list_pos_3"]
-        new_card = random.choice(button_post)
-    elif pos == card_positions[3]:
-        button_post = dict_pos["list_pos_1c"]
-        new_card = random.choice(button_post)
-    elif pos == card_positions[4]:
-        button_post = dict_pos["list_pos_2c"]
-        new_card = random.choice(button_post)
-    elif pos == card_positions[5]:
-        button_post = dict_pos["list_pos_3c"]
-        new_card = random.choice(button_post)
-
-    x, y = pos
-    new_card.place(x=x, y=y, anchor="nw")
-    new_card.lift()
-    # card_in_play.append(new_card)
-    print(f"drew new card : {new_card.id} at position {pos}")
-    # else:
-    # print("no more carad available to draw")
 
 
 # Create containers for all buttons
+white_buttons = {}
 red_buttons = {}
 blue_buttons = {}
 red_canvas_ids = {}
 blue_canvas_ids = {}
+white_canvas_ids = {}
 
 # Store buttons and their canvas IDs when creating them
 for i in range(1, 10):
     # For red buttons
-    red_buttons[i] = globals()[f"red_glass_{i}"]
+    red_buttons[i] = globals()[f"merah_glass_{i}"]
     red_canvas_ids[i] = globals()[f"gm{i}"]
     red_buttons[i]._canvas_id = red_canvas_ids[i]
 
     # For blue buttons
-    blue_buttons[i] = globals()[f"blue_glass_{i}"]
+    blue_buttons[i] = globals()[f"biru_glass_{i}"]
     blue_canvas_ids[i] = globals()[f"gb{i}"]
     blue_buttons[i]._canvas_id = blue_canvas_ids[i]
 
+    # For white buttons
+    white_buttons[i] = globals()[f"putih_glass_{i}"]
+    white_canvas_ids[i] = globals()[f"gp{i}"]
+    white_buttons[i]._canvas_id = white_canvas_ids[i]
+
 
 def select_and_show_random_buttons():
-    # Combine all buttons
-    all_buttons = list(red_buttons.values()) + list(blue_buttons.values())
-
-    # Group buttons by ID (both colors together)
-    buttons_by_id = {}
-    for button in all_buttons:
-        if not hasattr(button, 'id'):
-            continue
-
-        if button.id not in buttons_by_id:
-            buttons_by_id[button.id] = []
-        buttons_by_id[button.id].append(button)
-
-    # Select 3 unique random ids
-    selected_ids = random.sample(list(buttons_by_id.keys()), min(3, len(buttons_by_id)))
-
-    # Hide all buttons first
+    # First hide all buttons
+    all_buttons = list(red_buttons.values()) + list(blue_buttons.values()) + list(white_buttons.values())
     for button in all_buttons:
         if hasattr(button, '_canvas_id'):
             canvas.itemconfig(button._canvas_id, state='hidden')
 
-    # For each selected ID, randomly choose either red or blue to show
-    for selected_id in selected_ids:
-        available_buttons = buttons_by_id[selected_id]
-        if available_buttons:  # Ensure there are buttons to choose from
-            chosen_button = random.choice(available_buttons)
-            canvas.itemconfig(chosen_button._canvas_id, state='normal')
+    # Randomly choose a red:blue ratio for the 3 colored buttons
+    red_blue_choice = random.choice([(0, 3), (1, 2), (2, 1), (3, 0)])
+    red_count, blue_count = red_blue_choice
 
+    # Create a set to track used IDs
+    used_ids = set()
+    selected_buttons = []
+
+    # Select colored buttons without duplicate IDs
+    # 1. Select red buttons
+    if red_count > 0:
+        available_reds = [btn for btn in red_buttons.values()
+                          if hasattr(btn, '_canvas_id') and btn.id not in used_ids]
+        selected_reds = random.sample(available_reds, min(red_count, len(available_reds)))
+        selected_buttons.extend(selected_reds)
+        used_ids.update(btn.id for btn in selected_reds)
+
+    # 2. Select blue buttons
+    if blue_count > 0:
+        available_blues = [btn for btn in blue_buttons.values()
+                           if hasattr(btn, '_canvas_id') and btn.id not in used_ids]
+        selected_blues = random.sample(available_blues, min(blue_count, len(available_blues)))
+        selected_buttons.extend(selected_blues)
+        used_ids.update(btn.id for btn in selected_blues)
+
+    # 3. Select white buttons (6 remaining) without duplicate IDs
+    available_whites = [btn for btn in white_buttons.values()
+                        if hasattr(btn, '_canvas_id') and btn.id not in used_ids]
+    selected_whites = random.sample(available_whites, min(6, len(available_whites)))
+    selected_buttons.extend(selected_whites)
+    used_ids.update(btn.id for btn in selected_whites)
+
+    # Show selected buttons (3 colored + 6 white)
+    for button in selected_buttons:
+        canvas.itemconfig(button._canvas_id, state='normal')
+
+    # Print selection for debugging
+    print(f"Selected {len(selected_buttons)} buttons (expected 9)")
+    print(f"Colored: {red_count} red, {blue_count} blue")
+    print(f"Red IDs: {[btn.id for btn in selected_buttons if hasattr(btn, 'warna') and btn.warna == 'merah']}")
+    print(f"Blue IDs: {[btn.id for btn in selected_buttons if hasattr(btn, 'warna') and btn.warna == 'biru']}")
+    print(f"White IDs: {[btn.id for btn in selected_buttons if hasattr(btn, 'warna') and btn.warna == 'putih']}")
+
+
+# def place_random_buttons():
+#     # List of all possible buttons
+#     global all_buttons, positions, card_in_play
+#
+#     positions = [
+#         (330.0, 762.0),
+#         (500.0, 762.0),
+#         (670.0, 762.0)]
+#
+#     positions_kom = [
+#         (330.0, 10.0),
+#         (500.0, 10.0),
+#         (670.0, 10.0)
+#     ]
+#
+#     dict_pos = {"list_pos_1": [kp11, kp21, kp31, kb11, kb21, kb31, km11, km21, km31],
+#                 "list_pos_2": [kp12, kp22, kp32, kb12, kb22, kb32, km12, km22, km32],
+#                 "list_pos_3": [kp13, kp23, kp33, kb13, kb23, kb33, km13, km23, km33]}
+#
+#     dict_kom = {"list_pos_1": [buttons_komputer["kpc11"], buttons_komputer["kpc21"], buttons_komputer["kpc31"],
+#                                buttons_komputer["kmc11"], buttons_komputer["kmc21"], buttons_komputer["kmc31"],
+#                                buttons_komputer["kbc11"], buttons_komputer["kbc21"], buttons_komputer["kbc31"]],
+#                 "list_pos_2": [buttons_komputer["kpc12"], buttons_komputer["kpc22"], buttons_komputer["kpc32"],
+#                                buttons_komputer["kmc12"], buttons_komputer["kmc22"], buttons_komputer["kmc32"],
+#                                buttons_komputer["kbc12"], buttons_komputer["kbc22"], buttons_komputer["kbc32"]],
+#                 "list_pos_3": [buttons_komputer["kpc13"], buttons_komputer["kpc23"], buttons_komputer["kpc33"],
+#                                buttons_komputer["kmc13"], buttons_komputer["kmc23"], buttons_komputer["kmc33"],
+#                                buttons_komputer["kbc13"], buttons_komputer["kbc23"], buttons_komputer["kbc33"]]}
+#
+#     selected_buttons = []
+#     for one_post in positions:
+#         if one_post == positions[0]:
+#             button_post = dict_pos["list_pos_1"]
+#             new_card = random.choice(button_post)
+#             selected_buttons.append(new_card)
+#         elif one_post == positions[1]:
+#             button_post = dict_pos["list_pos_2"]
+#             new_card = random.choice(button_post)
+#             selected_buttons.append(new_card)
+#         else:
+#             button_post = dict_pos["list_pos_3"]
+#             new_card = random.choice(button_post)
+#             selected_buttons.append(new_card)
+#
+#     # Place selected buttons
+#     for i, button in enumerate(selected_buttons):
+#         x, y = positions[i]
+#         button.place(
+#             x=x,
+#             y=y,
+#             anchor="nw"  # Explicit anchor point
+#         )
+#         button.lift()  # Bring to front
+#         print(f"Placed {button.id} at ({x}, {y})")
+#
+#
+#     #for komputer
+#     selected_buttons_kom = []
+#     for one_post_kom in positions_kom:
+#         if one_post_kom == positions_kom[0]:
+#             button_post = dict_kom["list_pos_1"]
+#             new_card_kom = random.choice(button_post)
+#             selected_buttons_kom.append(new_card_kom)
+#         elif one_post_kom == positions_kom[1]:
+#             button_post = dict_kom["list_pos_2"]
+#             new_card_kom = random.choice(button_post)
+#             selected_buttons_kom.append(new_card_kom)
+#         else:
+#             button_post = dict_kom["list_pos_3"]
+#             new_card_kom = random.choice(button_post)
+#             selected_buttons_kom.append(new_card_kom)
+#
+#     # Place selected buttons
+#     for i, button in enumerate(selected_buttons_kom):
+#         x, y = positions[i]
+#         button.place(
+#             x=x,
+#             y=y,
+#             anchor="nw"  # Explicit anchor point
+#         )
+#         button.lift()  # Bring to front
+#         print(f"Placed {button.id} at ({x}, {y})")
+#
+#     # Force UI update
+#     button.master.update()
 
 def place_random_buttons():
     # List of all possible buttons
@@ -1697,12 +1845,11 @@ second_click = None
 result = None
 turn = "user"
 
-
-def handle_button_click(button, status="user"):
+def handle_button_click(button, status_="user"):
     """Handles button clicks and compares two buttons"""
     global first_click, second_click, result, total_score, turn
 
-    if status != "cup":
+    if status_ != "cup":
         if turn != "user":
             print("Bukan giliran user.")
             return
@@ -1710,15 +1857,19 @@ def handle_button_click(button, status="user"):
     # Get button attributes
     if hasattr(button, 'angka'):
         clicked_data = {
+            "button_obj": button,  # Store the button object
             "id": button.id,
             "warna": button.warna,
             "angka": button.angka,
+            "pos": (button.winfo_x(), button.winfo_y())
         }
+        # remove_kartu(button)
     else:
         clicked_data = {
+            "button_obj": button,  # Store the button object
             "id": button.id,
             "warna": button.warna,
-            "status": button.status,
+            "status": button.status
         }
 
     print(f"Button saved: {clicked_data}")
@@ -1727,19 +1878,30 @@ def handle_button_click(button, status="user"):
     if first_click is None:
         first_click = clicked_data
         print("First button selected. Click another button to compare.")
-        if 'angka' in clicked_data:
-            remove_kartu(button)
+
+        button.config(relief="sunken")
+        button.after(200, lambda: button.config(relief="flat"))
+
     else:
         second_click = clicked_data
+        button.config(relief="sunken")
+        button.after(200, lambda: button.config(relief="flat"))
+
         compare_buttons()
-        if 'angka' in clicked_data:
-            remove_kartu(button)
         update_my_score_display()
+        update_image_based_on_selection()
+
+        # Remove and replace BOTH cards
+        if first_click and 'pos' in first_click:
+            remove_and_replace_card(first_click['button_obj'])
+        if second_click and 'pos' in second_click:
+            remove_and_replace_card(second_click['button_obj'])
+
         # Reset for next comparison
         first_click = None
         second_click = None
 
-        if status != "cup":
+        if status_ != "cup":
             if turn == "user":
                 turn = "komputer"
             else:
@@ -1749,26 +1911,30 @@ def handle_button_click(button, status="user"):
     button.config(relief="sunken")
     button.after(200, lambda: button.config(relief="flat"))
 
-def handle_button_click_kom(button):
+def handle_button_click_kom(button, status_="komputer"):
     """Handles button clicks and compares two buttons"""
     global first_click, second_click, result, total_score, turn
-
-    if turn != "komputer":
-        print("Bukan giliran komputer.")
-        return
+    # if status_ != "cup":
+    #     if turn != "user":
+    #         print("Bukan giliran user.")
+    #         return
 
     # Get button attributes
     if hasattr(button, 'angka'):
         clicked_data = {
+            "button_obj": button,  # Store the button object
             "id": button.id,
             "warna": button.warna,
             "angka": button.angka,
+            "pos": (button.winfo_x(), button.winfo_y())
         }
+        # remove_kartu(button)
     else:
         clicked_data = {
+            "button_obj": button,  # Store the button object
             "id": button.id,
             "warna": button.warna,
-            "status": button.status,
+            "status": button.status
         }
 
     print(f"Button saved: {clicked_data}")
@@ -1777,26 +1943,104 @@ def handle_button_click_kom(button):
     if first_click is None:
         first_click = clicked_data
         print("First button selected. Click another button to compare.")
-        if 'angka' in clicked_data:
-            remove_kartu(button)
+
+        button.config(relief="sunken")
+        button.after(200, lambda: button.config(relief="flat"))
+
     else:
         second_click = clicked_data
+        button.config(relief="sunken")
+        button.after(200, lambda: button.config(relief="flat"))
+
         compare_buttons()
-        if 'angka' in clicked_data:
-            remove_kartu(button)
         update_my_score_display_kom()
+        update_image_based_on_selection()
+
+        # Remove and replace BOTH cards
+        if first_click and 'pos' in first_click:
+            remove_and_replace_card(first_click['button_obj'])
+        if second_click and 'pos' in second_click:
+            remove_and_replace_card(second_click['button_obj'])
+
         # Reset for next comparison
         first_click = None
         second_click = None
 
-        if turn == "komputer":
-            turn = "user"
-        else:
-            turn = "komputer"
+        if status_ != "cup":
+            if turn == "komputer":
+                turn = "user"
+            else:
+                turn = "komputer"
 
     # Visual feedback
     button.config(relief="sunken")
     button.after(200, lambda: button.config(relief="flat"))
+
+def remove_and_replace_card(button):
+    """Handles complete card removal and replacement"""
+    pos = get_button_position(button)
+    if pos:
+        remove_kartu(button)
+        ambil_kartu(pos)
+
+
+def get_button_position(button):
+    """Returns the position slot the button occupies"""
+    card_positions = [
+        (330.0, 762.0),  # Position 1
+        (500.0, 762.0),  # Position 2
+        (670.0, 762.0)  # Position 3
+    ]
+
+    button_pos = (button.winfo_x(), button.winfo_y())
+    for pos in card_positions:
+        if (abs(button_pos[0] - pos[0]) < 10 and
+                abs(button_pos[1] - pos[1]) < 10):
+            return pos
+    return None
+
+
+# Keep your existing remove_kartu and ambil_kartu functions
+def remove_kartu(button):
+    button.place_forget()
+    print(f"Removed card {button.id}")
+
+
+def ambil_kartu(pos):
+    """Draws a new random card at position"""
+    card_groups = {
+        (330.0, 762.0): [kp11, kp21, kp31, kb11, kb21, kb31, km11, km21, km31],
+        (500.0, 762.0): [kp12, kp22, kp32, kb12, kb22, kb32, km12, km22, km32],
+        (670.0, 762.0): [kp13, kp23, kp33, kb13, kb23, kb33, km13, km23, km33],
+        (330.0, 10.0): [buttons_komputer["kpc11"], buttons_komputer["kpc21"], buttons_komputer["kpc31"],
+                        buttons_komputer["kmc11"], buttons_komputer["kmc21"], buttons_komputer["kmc31"],
+                        buttons_komputer["kbc11"], buttons_komputer["kbc21"], buttons_komputer["kbc31"]],
+        (500.0, 10.0): [buttons_komputer["kpc12"], buttons_komputer["kpc22"], buttons_komputer["kpc32"],
+                    buttons_komputer["kmc12"], buttons_komputer["kmc22"], buttons_komputer["kmc32"],
+                    buttons_komputer["kbc12"], buttons_komputer["kbc22"], buttons_komputer["kbc32"]],
+        (670.0, 10.0): [buttons_komputer["kpc13"], buttons_komputer["kpc23"], buttons_komputer["kpc33"],
+                    buttons_komputer["kmc13"], buttons_komputer["kmc23"], buttons_komputer["kmc33"],
+                    buttons_komputer["kbc13"], buttons_komputer["kbc23"], buttons_komputer["kbc33"]]
+    }
+
+    if pos in card_groups:
+        new_card = random.choice(card_groups[pos])
+        new_card.place(x=pos[0], y=pos[1], anchor="nw")
+        new_card.lift()
+        print(f"New card {new_card.id} at position {pos}")
+
+
+def update_my_score_display():
+    her_entry_score.config(state="normal")  # Ubah jadi normal dulu
+    her_entry_score.delete(0, "end")  # Kosongkan
+    her_entry_score.insert(0, str(total_score))  # Masukkan nilai terbaru
+    her_entry_score.config(state="readonly")  # Lock lagi supaya tidak bisa diedit
+
+def update_my_score_display_kom():
+    his_entry_score.config(state="normal")  # Ubah jadi normal dulu
+    his_entry_score.delete(0, "end")  # Kosongkan
+    his_entry_score.insert(0, str(total_score))  # Masukkan nilai terbaru
+    his_entry_score.config(state="readonly")  # Lock lagi supaya tidak bisa diedit
 
 # At the top of your script (global scope)
 comparison_results = []  # Stores all results
@@ -1805,37 +2049,99 @@ total_score = 0  # Stores running total score
 
 
 def compare_buttons():
-    global total_score, comparison_results
-    global first_click, second_click, result
+    global total_score, comparison_results, first_click, second_click, result, latest_result
 
+    # Reset score before recalculating
     total_score = 0
 
+    # Determine which button has angka (number)
     angka_button = first_click if 'angka' in first_click else second_click
     other_button = second_click if angka_button == first_click else first_click
 
+    # Rule 1: If either button is 'putih', angka stays the same
     if first_click['warna'] == 'putih' or second_click['warna'] == 'putih':
         result = angka_button['angka']
         print(f"Result (white rule): {result}")
+
+    # Rule 2: If colors match (both 'biru' or both 'merah')
     elif first_click['warna'] == second_click['warna']:
         result = angka_button['angka'] * 2
         print(f"Result (color match): {result}")
+
+    # NEW RULE 3: Red and blue combination
+    elif (first_click['warna'] == 'merah' and second_click['warna'] == 'biru') or \
+            (first_click['warna'] == 'biru' and second_click['warna'] == 'merah'):
+        result = 1
+        print(f"Result (red-blue combination): {result}")
+
     else:
         result = None
         print("No matching rule applies")
 
+    # Update score tracking
     latest_result = result
     comparison_results.append(result)
 
-    for result in comparison_results:
-        if result is not None:
-            total_score += result
+    # Calculate total score
+    for res in comparison_results:
+        if res is not None:  # Skip None results
+            total_score += res
 
     print(f"Current total score: {total_score}")
+    print(f"Current score: {latest_result}")
 
-    # # Tambahkan ini supaya Entry "Me:" update otomatis
-    # update_my_score_display()
+    return total_score, latest_result
 
-    return total_score
+
+def update_image_based_on_selection():
+    global first_click, second_click, canvas, image_references, latest_result
+
+    # Validation checks
+    if not (first_click and second_click):
+        return
+    if 'angka' not in first_click or 'warna' not in second_click:
+        return
+    if latest_result is None:  # Skip if no valid result from comparison
+        return
+
+    angka = str(latest_result)
+    warna = second_click['warna']
+    button = second_click['button_obj']
+
+    # Get the image reference
+    image_key = f"{warna}_cup_{angka}"
+    if image_key not in image_references:
+        print(f"Error: No image found for {image_key}")
+        return
+
+    # Get button position (center)
+    button_x = button.winfo_rootx() + button.winfo_width() // 2
+    button_y = button.winfo_rooty() + button.winfo_height() // 2
+
+    # Convert to canvas coordinates
+    canvas_x = canvas.canvasx(button_x)
+    canvas_y = canvas.canvasy(button_y)
+
+    # COMPLETELY REMOVE THE BUTTON
+    if hasattr(button, '_canvas_id'):
+        canvas.delete(button._canvas_id)  # Remove from canvas
+    button.destroy()  # Completely destroy the widget
+
+    # Create new image at the button's former position
+    new_image = canvas.create_image(
+        canvas_x,
+        canvas_y - 25,
+        image=image_references[image_key],
+        tags=("colored_cup", warna, angka, f"replaced_{button.id}")
+    )
+
+    # Store reference
+    if not hasattr(canvas, 'replaced_images'):
+        canvas.replaced_images = []
+    canvas.replaced_images.append(new_image)
+
+    # Update UI
+    canvas.update_idletasks()
 
 
 ################################################### ALUR ###########################################
