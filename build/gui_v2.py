@@ -1583,7 +1583,6 @@ def hide_all_except_start():
     canvas.itemconfig(lose_button_id, state="hidden")
     canvas.itemconfig(his_entry_score_id, state="hidden")
     canvas.itemconfig(her_entry_score_id, state="hidden")
-    canvas.itemconfig("you_win_image", state="hidden")
     for i in range(1, 10):
         canvas.itemconfig(globals()[f"gp{i}"], state="hidden")
     for i in range(1, 10):
@@ -2130,8 +2129,7 @@ def compare_buttons():
     return result, latest_result
 
 def show_end_screen(status: str):
-    
-    # Sembunyikan semua elemen yang tidak diinginkan
+    # Sembunyikan semua elemen canvas
     canvas.itemconfig("default_main_area", state='hidden')
     canvas.itemconfig("score_area", state='hidden')
     canvas.itemconfig("card_area", state='hidden')
@@ -2142,41 +2140,61 @@ def show_end_screen(status: str):
     canvas.itemconfig(his_entry_score_id, state="hidden")
     canvas.itemconfig(her_entry_score_id, state="hidden")
 
-
-
-# Sembunyikan semua tombol kartu komputer
-for button in buttons_komputer.values():
-    button.place_forget()
-
-    # Sembunyikan semua tombol cup
+    # Sembunyikan semua gelas di canvas
     for i in range(1, 10):
         canvas.itemconfig(globals()[f"gp{i}"], state="hidden")
         canvas.itemconfig(globals()[f"gb{i}"], state="hidden")
         canvas.itemconfig(globals()[f"gm{i}"], state="hidden")
 
-    # Tampilkan hanya logo dan status akhir sesuai parameter
+    # Tampilkan logo dan latar
     canvas.itemconfig("title_game", state='normal')
+    canvas.itemconfig("title_start", state='normal')  # opsional
 
-    # if status == "win":
-    #     canvas.itemconfig("you_win_image", state='normal')
-    #     show_end_screen("win")
-    # elif status == "draw":
-    #     canvas.itemconfig("you_draw_image", state='normal')
-    #     show_end_screen("draw")
-    # elif status == "lose":
-    #     canvas.itemconfig("you_lose_image", state='normal')
-    #     show_end_screen("lose")
+    # Sembunyikan tombol start
+    canvas.itemconfig(start_button_id, state='hidden')
 
+    # Sembunyikan semua tombol kartu user
+    all_user_cards = [
+        kp11, kp12, kp13, kp21, kp22, kp23, kp31, kp32, kp33,
+        kb11, kb12, kb13, kb21, kb22, kb23, kb31, kb32, kb33,
+        km11, km12, km13, km21, km22, km23, km31, km32, km33
+    ]
+    for btn in all_user_cards:
+        try:
+            btn.place_forget()
+        except:
+            pass
+
+    # Sembunyikan semua tombol kartu komputer
+    for btn in buttons_komputer.values():
+        try:
+            btn.place_forget()
+        except:
+            pass
+
+    # Sembunyikan semua tombol akhir
+    canvas.itemconfig(win_button_id, state='hidden')
+    canvas.itemconfig(draw_button_id, state='hidden')
+    canvas.itemconfig(lose_button_id, state='hidden')
+
+    # Tampilkan hanya tombol hasil akhir sesuai status
+    if status == "win":
+        canvas.itemconfig(win_button_id, state='normal')
+    elif status == "draw":
+        canvas.itemconfig(draw_button_id, state='normal')
+    elif status == "lose":
+        canvas.itemconfig(lose_button_id, state='normal')
+
+
+    
 def check_winner():
     if total_score_user > total_score_kom:
-        canvas.itemconfig("you_win_image", state="normal")
         show_end_screen("win")
     elif total_score_user < total_score_kom:
-        canvas.itemconfig("you_lose_image", state="normal")
         show_end_screen("lose")
     else:
-        canvas.itemconfig("you_draw_image", state="normal")
         show_end_screen("draw")
+
 
 
 
