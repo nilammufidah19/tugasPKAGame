@@ -1926,6 +1926,7 @@ def handle_button_click(button, status_="user"):
             update_my_score_display_kom()
             turn = "user"
 
+        if turn == "komputer":
             user_turn_count += 1
             if user_turn_count >= 5:
                 print("Giliran user selesai!")
@@ -2128,13 +2129,54 @@ def compare_buttons():
     print(f"Result dari compare_buttons: {result}")
     return result, latest_result
 
+def show_end_screen(status: str):
+    
+    # Sembunyikan semua elemen yang tidak diinginkan
+    canvas.itemconfig("default_main_area", state='hidden')
+    canvas.itemconfig("score_area", state='hidden')
+    canvas.itemconfig("card_area", state='hidden')
+    canvas.itemconfig("back_card", state='hidden')
+    canvas.itemconfig("tile", state='hidden')
+    canvas.itemconfig("cat_head", state='hidden')
+    canvas.itemconfig("colored_cup", state='hidden')
+    canvas.itemconfig(his_entry_score_id, state="hidden")
+    canvas.itemconfig(her_entry_score_id, state="hidden")
+
+
+
+# Sembunyikan semua tombol kartu komputer
+for button in buttons_komputer.values():
+    button.place_forget()
+
+    # Sembunyikan semua tombol cup
+    for i in range(1, 10):
+        canvas.itemconfig(globals()[f"gp{i}"], state="hidden")
+        canvas.itemconfig(globals()[f"gb{i}"], state="hidden")
+        canvas.itemconfig(globals()[f"gm{i}"], state="hidden")
+
+    # Tampilkan hanya logo dan status akhir sesuai parameter
+    canvas.itemconfig("title_game", state='normal')
+
+    # if status == "win":
+    #     canvas.itemconfig("you_win_image", state='normal')
+    #     show_end_screen("win")
+    # elif status == "draw":
+    #     canvas.itemconfig("you_draw_image", state='normal')
+    #     show_end_screen("draw")
+    # elif status == "lose":
+    #     canvas.itemconfig("you_lose_image", state='normal')
+    #     show_end_screen("lose")
+
 def check_winner():
     if total_score_user > total_score_kom:
         canvas.itemconfig("you_win_image", state="normal")
+        show_end_screen("win")
     elif total_score_user < total_score_kom:
         canvas.itemconfig("you_lose_image", state="normal")
+        show_end_screen("lose")
     else:
         canvas.itemconfig("you_draw_image", state="normal")
+        show_end_screen("draw")
 
 
 
