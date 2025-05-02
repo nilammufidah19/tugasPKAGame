@@ -1284,7 +1284,7 @@ draw_button.place(
     width=569.0,
     height=169.0
 )
-draw_button_id = canvas.create_window(476, 324, window=draw_button)
+draw_button_id = canvas.create_window(736, 574, window=draw_button)
 
 button_image_2 = PhotoImage(
     file=relative_to_assets("button_2.png"))
@@ -1301,7 +1301,7 @@ lose_button.place(
     width=564.0,
     height=169.0
 )
-lose_button_id = canvas.create_window(476, 324, window=lose_button)
+lose_button_id = canvas.create_window(736, 574, window=lose_button)
 
 button_image_3 = PhotoImage(
     file=relative_to_assets("button_3.png"))
@@ -1318,7 +1318,7 @@ win_button.place(
     width=566.0,
     height=169.0
 )
-win_button_id = canvas.create_window(476, 324, window=win_button)
+win_button_id = canvas.create_window(736, 574, window=win_button)
 
 button_image_4 = PhotoImage(
     file=relative_to_assets("button_4.png"))
@@ -1493,7 +1493,7 @@ putih_cup_4 = canvas.create_image(
 
 image_win = PhotoImage(file=relative_to_assets("button_3.png"))
 you_win_image_id = canvas.create_image(
-    720.0, 512.0,
+    476, 324,
     image=image_win,
     state="hidden",
     tags=("you_win_image",)
@@ -1501,7 +1501,7 @@ you_win_image_id = canvas.create_image(
 
 image_draw = PhotoImage(file=relative_to_assets("button_2.png"))
 you_draw_image_id = canvas.create_image(
-    720.0, 512.0,
+    476, 324,
     image=image_draw,
     state="hidden",
     tags=("you_draw_image",)
@@ -1509,7 +1509,7 @@ you_draw_image_id = canvas.create_image(
 
 image_lose = PhotoImage(file=relative_to_assets("button_1.png"))
 you_lose_image_id = canvas.create_image(
-    720.0, 512.0,
+    476, 324,
     image=image_lose,
     state="hidden",
     tags=("you_lose_image",)
@@ -2147,7 +2147,7 @@ def show_end_screen(status: str):
         canvas.itemconfig(globals()[f"gm{i}"], state="hidden")
 
     # Tampilkan logo dan latar
-    canvas.itemconfig("title_game", state='normal')
+    canvas.itemconfig("title_game", state='hidden')
     canvas.itemconfig("title_start", state='normal')  # opsional
 
     # Sembunyikan tombol start
